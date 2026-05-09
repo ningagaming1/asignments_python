@@ -1,8 +1,8 @@
-#import os
+import os
 import random
 
 #clear the console
-#os.system("cls")
+os.system("cls")
 
 #some variables
 player_health = 100
@@ -45,7 +45,7 @@ else:
         else:
             print("Invalid input, please choose a door between 1 and 4.")
         #clear console
-        #os.system("cls")
+        os.system("cls")
     
         #weapon choise
         while weapon > 4 or weapon <1:
