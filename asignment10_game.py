@@ -1,8 +1,8 @@
-#import os
+import os
 import random
 
 #clear the console
-#os.system("cls")
+os.system("cls")
 
 #some variables
 player_health = 100
@@ -45,7 +45,7 @@ else:
         else:
             print("Invalid input, please choose a door between 1 and 4.")
         #clear console
-        #os.system("cls")
+        os.system("cls")
     
         #weapon choise
         while weapon > 4 or weapon <1:
@@ -68,8 +68,8 @@ else:
             
         #boss batle bigins
         print("A boss just apeared")
-        while boss_health >1 or player_health >1:
-            while fight_status >2 or fight_status <1:
+        while boss_health >1 and player_health >1:
+            while fight_status not in [1, 2]:  
              print("you have two options 1.run 2.fight")
              fight_status =  int(input("which one do you chose (1/2) "))
              if weapon == 3:
@@ -80,7 +80,9 @@ else:
                  if boss_health<1:
                      print("boss died you win")
                      exit()
+                 print(f"{boss_health}")
                  player_health = player_health - boss_damage
                  if  player_health<1:
                      print("you lost")
                      exit()
+                 print(f"{player_health}")
